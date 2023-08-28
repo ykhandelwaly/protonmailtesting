@@ -1,0 +1,88 @@
+/*
+ * Copyright (c) 2022 Proton AG
+ *
+ * This file is part of Proton Mail.
+ *
+ * Proton Mail is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Proton Mail is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+ */
+package ch.protonmail.android.domain.entity
+
+/*
+ * A set of typed representation of business models that can be described as 'field'.
+ * e.g. Email, Username, Password
+ *
+ * Thanks to this strongly typed paradigm we can about confusion about 'userId' to 'messageId' and similar cases.
+ *
+ * Even more, this can allow us to run simple validation on object instantiation, so we can ensure that an 'Email'
+ * entity respect the proper format since its born to its death
+ */
+
+// SORTED FIRSTLY ALPHABETICALLY AND THEN LOGICALLY WHEN 2 OR MORE ARE SO STRONGLY CONNECTED THAT THEY REQUIRES TO
+// STAY CLOSE
+
+// IF WE'RE BE GOIN TO APPROACH A BIG SIZE FOR THIS FILE, WE MUST CONSIDER SPLITTING INTO DIFFERENT FILES TO BE PLACED
+// INTO A 'field' PACKAGE
+
+/**
+ * Represent a given number of bytes
+ */
+inline class Bytes(val l: ULong) {
+
+    fun toKilobytes(): ULong =
+        l / 1024.toULong()
+
+    fun toMegabytes(): ULong =
+        toKilobytes() / 1024.toULong()
+
+    fun toLong(): Long =
+        l.toLong()
+
+    fun formatToMegabytesString(floatingPoints: Int): String {
+        val mb = toMegabytes()
+        val decimalString = (l - mb).toString()
+        return "$mb.${decimalString.take(floatingPoints)} MB"
+    }
+}
+val Number.bytes get() = Bytes(toLong().toULong())
+
+/**
+ * Entity representing an email address
+ * [Validable] by [RegexValidator]
+ */
+@Validated
+data class EmailAddress(val s: String) : Validable by RegexValidator(s, VALIDATION_REGEX) {
+    init { requireValid() }
+
+    companion object {
+        @Suppress("MaxLineLength") // Nobody can read it anyway ¯\_(ツ)_/¯
+        const val VALIDATION_PATTERN = """(?:[a-z0-9!#${'$'}%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#${'$'}%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])"""
+        val VALIDATION_REGEX = VALIDATION_PATTERN.toRegex(RegexOption.IGNORE_CASE)
+    }
+}
+
+/**
+ * Entity representing a generic name
+ * [Validable] by [NotBlankStringValidator]
+ */
+data class Name(val s: String) : Validable by NotBlankStringValidator(s) {
+    init { requireValid() }
+}
+
+/**
+ * Entity representing a generic String that cannot be blank
+ * [Validable] by [NotBlankStringValidator]
+ */
+data class NotBlankString(val s: String) : Validable by NotBlankStringValidator(s) {
+    init { requireValid() }
+}

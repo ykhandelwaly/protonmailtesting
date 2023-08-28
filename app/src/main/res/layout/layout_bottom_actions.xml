@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/background_norm"
+    android:elevation="@dimen/elevation_m">
+
+    <View
+        style="@style/ViewSeparatorHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/size_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/firstActionImageButton"
+        android:layout_width="@dimen/message_details_actions_button_size"
+        android:layout_height="@dimen/message_details_actions_button_size"
+        android:background="?selectableItemBackgroundBorderless"
+        app:srcCompat="@drawable/ic_proton_arrow_up_and_left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/secondActionImageButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/reply" />
+
+    <ImageButton
+        android:id="@+id/secondActionImageButton"
+        android:layout_width="@dimen/message_details_actions_button_size"
+        android:layout_height="@dimen/message_details_actions_button_size"
+        android:background="?selectableItemBackgroundBorderless"
+        app:srcCompat="@drawable/ic_proton_envelope_dot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/thirdActionImageButton"
+        app:layout_constraintStart_toEndOf="@id/firstActionImageButton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/mark_as_unread" />
+
+    <ImageButton
+        android:id="@+id/thirdActionImageButton"
+        android:layout_width="@dimen/message_details_actions_button_size"
+        android:layout_height="@dimen/message_details_actions_button_size"
+        android:background="?selectableItemBackgroundBorderless"
+        app:srcCompat="@drawable/ic_proton_trash"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/fourthActionImageButton"
+        app:layout_constraintStart_toEndOf="@id/secondActionImageButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/fourthActionImageButton"
+        android:layout_width="@dimen/message_details_actions_button_size"
+        android:layout_height="@dimen/message_details_actions_button_size"
+        android:background="?selectableItemBackgroundBorderless"
+        app:srcCompat="@drawable/ic_proton_tag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/moreActionImageButton"
+        app:layout_constraintStart_toEndOf="@id/thirdActionImageButton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/label_as" />
+
+    <ImageButton
+        android:id="@+id/moreActionImageButton"
+        android:layout_width="@dimen/message_details_actions_button_size"
+        android:layout_height="@dimen/message_details_actions_button_size"
+        android:background="?selectableItemBackgroundBorderless"
+        app:srcCompat="@drawable/ic_proton_three_dots_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fourthActionImageButton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/more" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

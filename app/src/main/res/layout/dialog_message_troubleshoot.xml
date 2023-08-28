@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_norm"
+    android:paddingTop="@dimen/padding_xxl">
+
+    <TextView
+        android:id="@+id/troubleshoot_switch_text"
+        style="@style/Proton.Text.Default"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_l"
+        android:text="@string/allow_secure_connections_via_third_parties"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/troubleshoot_switch"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/troubleshoot_switch_description"
+        style="@style/Proton.Text.DefaultSmall.Weak"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_l"
+        android:paddingEnd="@dimen/padding_xxl"
+        android:text="@string/allow_secure_connections_via_third_parties_troubleshoot_description"
+        android:textColorLink="@color/hyperlink_color"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/troubleshoot_switch_text" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/troubleshoot_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/padding_l"
+        android:duplicateParentState="true"
+        app:layout_constraintBottom_toBottomOf="@id/troubleshoot_switch_text"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/troubleshoot_switch_text" />
+
+    <TextView
+        android:id="@+id/troubleshoot_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/fields_default_space_large"
+        android:paddingRight="@dimen/fields_default_space_large"
+        android:textColorLink="@color/hyperlink_color"
+        android:textSize="@dimen/h5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/troubleshoot_switch_description" />
+</androidx.constraintlayout.widget.ConstraintLayout>

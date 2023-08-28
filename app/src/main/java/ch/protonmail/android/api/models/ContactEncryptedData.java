@@ -1,0 +1,84 @@
+/*
+ * Copyright (c) 2022 Proton AG
+ *
+ * This file is part of Proton Mail.
+ *
+ * Proton Mail is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Proton Mail is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+ */
+package ch.protonmail.android.api.models;
+
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+import ch.protonmail.android.api.models.enumerations.ContactEncryption;
+import ch.protonmail.android.api.utils.Fields;
+import ch.protonmail.android.core.Constants;
+
+public class ContactEncryptedData implements Serializable {
+
+    private static final long serialVersionUID = 5326002769846478436L;
+    @SerializedName(Fields.Contact.TYPE)
+    private int type;
+    @SerializedName(Fields.Contact.DATA)
+    private String data;
+    @SerializedName(Fields.Contact.SIGNATURE)
+    private String signature;
+
+    public ContactEncryptedData(String data, String signature, Constants.VCardType type) {
+        this.data = data;
+        this.signature = signature;
+        this.type = type.getVCardTypeValue();
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public ContactEncryption getEncryptionType() {
+        return ContactEncryption.fromInteger(type);
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public String getSignature() {
+        return signature;
+    }
+
+    public void setSignature(String signature) {
+        this.signature = signature;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ContactEncryptedData that = (ContactEncryptedData) o;
+        return type == that.type &&
+                Objects.equals(data, that.data) &&
+                Objects.equals(signature, that.signature);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, data, signature);
+    }
+}

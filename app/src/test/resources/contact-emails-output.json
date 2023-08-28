@@ -1,0 +1,20 @@
+[
+  {
+    "contactEmailId": "emailId",
+    "email": "first@pm.me",
+    "name": "firstcontact",
+    "lastUsedTime": 111
+  },
+  {
+    "contactEmailId": "emailId1",
+    "email": "second@pm.me",
+    "name": "secondcontact",
+    "lastUsedTime": 113
+  },
+  {
+    "contactEmailId": "emailId2",
+    "email": "third@pm.me",
+    "name": "thirdcontact",
+    "lastUsedTime": 112
+  }
+]

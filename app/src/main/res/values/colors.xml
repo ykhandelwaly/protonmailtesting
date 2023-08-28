@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+<resources>
+
+    <!-- lock and unlock -->
+    <color name="icon_purple">#9397cd</color>
+    <color name="icon_gray">#c2c2cc</color>
+    <color name="icon_green">#139717</color>
+    <color name="icon_warning">#ffa500</color>
+
+    <!-- Grays -->
+    <color name="white_30">#4DFFFFFF</color>
+
+    <!-- account types -->
+    <color name="professional">#D4B46E</color>
+    <color name="visionary">#6ddcfb</color>
+    <color name="plus">#c6e422</color>
+    <color name="free">@color/cornflower_blue</color>
+
+    <color name="aqua_base">#5EC7B7</color>
+    <color name="sage_base">#97C9C1</color>
+
+    <array name="label_colors">
+        <item>@color/purple_base</item>
+        <item>@color/pink_base</item>
+        <item>@color/strawberry_base</item>
+        <item>@color/carrot_base</item>
+        <item>@color/sahara_base</item>
+        <item>@color/slateblue_base</item>
+        <item>@color/pacific_base</item>
+        <item>@color/reef_base</item>
+        <item>@color/fern_base</item>
+        <item>@color/olive_base</item>
+    </array>
+
+    <color name="hyperlink_color">#0000EE</color>
+    <!-- endregion -->
+
+    <color name="onboarding_image_background">#f2efff</color>
+
+</resources>

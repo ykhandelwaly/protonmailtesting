@@ -1,0 +1,54 @@
+<!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="375dp"
+    android:height="140dp"
+    android:viewportWidth="375"
+    android:viewportHeight="140">
+  <path
+      android:pathData="M130,36.428C130,34.331 131.708,32.63 133.816,32.63H160.401C161.932,32.63 163.427,33.088 164.692,33.945L168.757,38.596C170.381,39.91 171.517,39.91 173.048,39.91H236.835C238.942,39.91 240.65,41.611 240.65,43.709V101.004C240.65,111.843 231.824,120.63 220.937,120.63H135.723C132.562,120.63 130,118.079 130,114.932V36.428Z">
+    <aapt:attr name="android:fillColor">
+      <gradient 
+          android:startY="4.45724"
+          android:startX="240.65"
+          android:endY="95.4665"
+          android:endX="209.85"
+          android:type="linear">
+        <item android:offset="0" android:color="#FFEEBEFF"/>
+        <item android:offset="1" android:color="#FF6D4AFF"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M148.955,59.599C149.781,56.749 152.391,54.788 155.359,54.788H254.345C257.675,54.788 260.074,57.981 259.148,61.18L243.316,115.818C242.49,118.669 239.88,120.63 236.913,120.63H137.926C134.597,120.63 132.197,117.436 133.124,114.238L148.955,59.599Z">
+    <aapt:attr name="android:fillColor">
+      <gradient 
+          android:startY="37.0615"
+          android:startX="220.619"
+          android:endY="139.479"
+          android:endX="254.686"
+          android:type="linear">
+        <item android:offset="0" android:color="#FFEEBEFF"/>
+        <item android:offset="1" android:color="#FF6D4AFF"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+</vector>

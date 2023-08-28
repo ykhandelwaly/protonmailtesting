@@ -1,0 +1,226 @@
+<!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+
+<resources>
+
+    <!-- region V4 -->
+
+    <!-- generic size -->
+    <dimen name="size_button_m">48dp</dimen>
+    <dimen name="size_divider">2px</dimen>
+    <dimen name="size_icon_s">16dp</dimen>
+    <dimen name="size_icon_m">24dp</dimen>
+    <dimen name="size_icon_l">32dp</dimen>
+    <dimen name="size_corner_xxxs">4dp</dimen>
+    <dimen name="size_corner_xxs">6dp</dimen>
+    <dimen name="size_corner_xs">8dp</dimen>
+    <dimen name="size_badge">24dp</dimen>
+    <dimen name="size_corner_s">16dp</dimen>
+
+    <dimen name="unread_messages_chip_size">20dp</dimen>
+    <dimen name="message_number_view_padding_horizontal">8dp</dimen>
+    <dimen name="message_number_view_padding_vertical">2dp</dimen>
+
+    <!-- generic height -->
+    <dimen name="height_indicator_m">8dp</dimen>
+    <dimen name="height_list_item_l">56dp</dimen>
+
+    <!-- generic padding -->
+    <dimen name="padding_xxs">1dp</dimen>
+    <dimen name="padding_xs">2dp</dimen>
+    <dimen name="padding_s">4dp</dimen>
+    <dimen name="padding_m">8dp</dimen>
+    <dimen name="padding_l">16dp</dimen>
+    <dimen name="padding_xl">24dp</dimen>
+    <dimen name="padding_xxl">32dp</dimen>
+    <dimen name="padding_3xl">40dp</dimen>
+    <dimen name="padding_4xl">48dp</dimen>
+    <dimen name="padding_5xl">56dp</dimen>
+    <dimen name="padding_6xl">64dp</dimen>
+
+    <dimen name="elevation_s">2dp</dimen>
+    // standard button low 2dp
+    <dimen name="elevation_m">4dp</dimen>
+    // standard app bar 4dp
+    // standard FAB elevation 6dp
+    // standard button high 8dp
+    // standard nav drawer 16dp
+
+    <!-- generic margin -->
+    <dimen name="margin_s">4dp</dimen>
+    <dimen name="margin_m">8dp</dimen>
+    <dimen name="margin_l">16dp</dimen>
+    <dimen name="margin_xl">24dp</dimen>
+    <dimen name="margin_xxl">32dp</dimen>
+    <dimen name="margin_3xl">40dp</dimen>
+
+    <!-- Toolbars -->
+    <dimen name="toolbar_padding_start">0dp</dimen>
+    <dimen name="toolbar_padding_end">8dp</dimen>
+    <dimen name="toolbar_action_layout_size">48dp</dimen>
+    <dimen name="toolbar_action_layout_icon_size">24dp</dimen>
+
+    <dimen name="expanded_toolbar_title_margin_bottom">8dp</dimen>
+    <dimen name="expanded_toolbar_title_padding_horizontal">16dp</dimen>
+
+    <dimen name="action_bar_elevation">8dp</dimen>
+    <dimen name="action_bar_no_elevation">0dp</dimen>
+
+    <!-- Side Drawer -->
+    <dimen name="height_drawer_section_name">56dp</dimen>
+    <dimen name="height_drawer_primaryitem">48dp</dimen>
+    <dimen name="height_drawer_footer">96dp</dimen>
+
+    <!-- Mailbox -->
+    <dimen name="mailbox_status_view_height">48dp</dimen>
+    <dimen name="mailbox_status_view_padding_horizontal">16dp</dimen>
+
+    <dimen name="mailbox_list_item_padding_horizontal">16dp</dimen>
+    <dimen name="mailbox_list_item_padding_vertical">12dp</dimen>
+    <dimen name="mailbox_list_item_views_margin">8dp</dimen>
+    <dimen name="mailbox_list_item_icon_size">16dp</dimen>
+    <dimen name="mailbox_list_item_expiration_icon_padding">2dp</dimen>
+
+    <dimen name="sender_initial_view_size">32dp</dimen>
+    <dimen name="sender_initial_view_margin_end">16dp</dimen>
+    <dimen name="sender_initial_view_check_icon_padding">4dp</dimen>
+
+    <!-- Message details -->
+    <dimen name="message_details_header_padding_horizontal">16dp</dimen>
+    <dimen name="message_details_header_padding_vertical">12dp</dimen>
+    <dimen name="message_details_header_margin_big">16dp</dimen>
+    <dimen name="message_details_header_margin_normal">8dp</dimen>
+    <dimen name="message_details_header_margin_small">4dp</dimen>
+    <dimen name="message_details_header_margin_extra_small">2dp</dimen>
+    <dimen name="message_details_header_small_icon_size">16dp</dimen>
+    <dimen name="message_details_header_chevron_icon_size">40dp</dimen>
+    <dimen name="message_details_header_chevron_icon_padding">12dp</dimen>
+    <dimen name="message_details_header_hourglass_icon_size">12dp</dimen>
+
+    <dimen name="message_details_banner_height">48dp</dimen>
+    <dimen name="message_details_banner_margin_horizontal">16dp</dimen>
+    <dimen name="message_details_banner_drawable_padding">8dp</dimen>
+    <dimen name="message_details_banner_small_icon_size">16dp</dimen>
+
+    <dimen name="message_details_attachment_details_attachment_modifier_width">18dp</dimen>
+    <dimen name="message_details_attachment_details_attachment_modifier_height">12dp</dimen>
+
+    <dimen name="message_details_actions_button_size">40dp</dimen>
+
+    <!-- Composer -->
+    <dimen name="height_composer_field">48dp</dimen>
+    <dimen name="padding_composer_body">20dp</dimen>
+
+    <!-- Contact -->
+    <dimen name="size_contact_icon">40dp</dimen>
+    <dimen name="padding_contact_group_icon">10dp</dimen>
+
+    <!-- Labels -->
+    <dimen name="min_width_label">56dp</dimen>
+    <dimen name="diameter_collapsed_label">14dp</dimen>
+
+    <!-- Settings -->
+    <dimen name="settings_item_min_height">48dp</dimen>
+    <dimen name="settings_radio_button_margin">12dp</dimen>
+    <dimen name="settings_snooze_day_size">40dp</dimen>
+    <dimen name="settings_pin_key_button_size">72dp</dimen>
+    <dimen name="settings_pin_key_button_margin">12dp</dimen>
+    <dimen name="settings_pin_font_size">24sp</dimen>
+    <dimen name="settings_pin_key_button_font">20sp</dimen>
+    <dimen name="settings_swipe_placeholder_height">96dp</dimen>
+    <dimen name="settings_swipe_placeholder_width">96dp</dimen>
+    <dimen name="settings_min_height_input_field">96dp</dimen>
+    <dimen name="settings_color_item_size">40dp</dimen>
+    <!-- Settings Swipe Preview Mock -->
+    <dimen name="settings_swipe_preview_avatar_mock_size">32dp</dimen>
+    <dimen name="settings_swipe_preview_line_mock_height">10dp</dimen>
+    <dimen name="settings_swipe_preview_line_mock_margin">12dp</dimen>
+
+    <!-- endregion -->
+
+    <!-- region V3 -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin_large">32dp</dimen>
+    <dimen name="activity_horizontal_margin_small">8dp</dimen>
+    <dimen name="activity_horizontal_margin_xsmall">4dp</dimen>
+    <dimen name="activity_vertical_margin_xsmall">4dp</dimen>
+
+    <dimen name="fields_default_space">8dp</dimen>
+    <dimen name="fields_default_space_medium">16dp</dimen>
+    <dimen name="fields_default_space_large">24dp</dimen>
+    <dimen name="fields_default_space_xlarge">32dp</dimen>
+    <dimen name="fields_default_space_small">5dp</dimen>
+    <dimen name="fields_default_space_small_plus">7dp</dimen>
+
+    <dimen name="h0">28sp</dimen>
+    <dimen name="h2">18sp</dimen>
+    <dimen name="h3">17sp</dimen>
+    <dimen name="h4">16sp</dimen>
+    <dimen name="h5">14sp</dimen>
+    <dimen name="h6">12sp</dimen>
+
+    <dimen name="shadow_height">2dp</dimen>
+    <dimen name="message_spacing_small">5dp</dimen>
+    <dimen name="message_spacing">10dp</dimen>
+    <dimen name="loading_more_height">75dp</dimen>
+    <dimen name="loading_more_progress_indicator_size">25dp</dimen>
+    <dimen name="divider_height">1px</dimen>
+    <dimen name="divider_width">1px</dimen>
+    <dimen name="compose_message_button_width">52dp</dimen>
+    <dimen name="attachment_list_spacing">60dp</dimen>
+
+    <!-- mailbox -->
+
+    <!-- nav drawer -->
+
+    <!-- login -->
+    <dimen name="spacing">40dp</dimen>
+    <dimen name="spacing_large">60dp</dimen>
+
+    <!-- contacts -->
+    <dimen name="contact_list_item_height">80dp</dimen>
+
+    <!-- labels -->
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- CollapsingToolbarLayout -->
+
+    <!-- CustomFloatingButtonView -->
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="fab_default_elevation">8dp</dimen>
+    <dimen name="fab_size_normal">56dp</dimen>
+    <dimen name="fab_size_mini">40dp</dimen>
+    <dimen name="fab_rounded_radius">10dp</dimen>
+    <dimen name="fab_text_horizontal_margin_normal">16dp</dimen>
+    <dimen name="fab_text_horizontal_margin_mini">8dp</dimen>
+
+    <!-- CollapsingToolbarLayout Avatar -->
+    <dimen name="avatar_size">120dp</dimen>
+    <dimen name="small_avatar_size">80dp</dimen>
+
+    <dimen name="custom_check_box_size">24dp</dimen>
+    <dimen name="constrained_message_content_view_size">200dp</dimen>
+
+    <!-- endregion -->
+
+    <dimen name="animation_translation_55">55dp</dimen>
+    <dimen name="animation_translation_105">105dp</dimen>
+
+</resources>

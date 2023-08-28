@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <ch.protonmail.android.views.messagesList.SenderInitialView
+        android:id="@+id/senderInitialView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/sender_initial_view_margin_end"
+        app:layout_constraintEnd_toStartOf="@id/senderInitialBarrier"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/senderInitialBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/senderInitialView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/repliedImageView"
+        android:layout_width="@dimen/message_details_header_small_icon_size"
+        android:layout_height="@dimen/message_details_header_small_icon_size"
+        android:layout_marginEnd="@dimen/message_details_header_margin_normal"
+        app:srcCompat="@drawable/ic_proton_arrow_up_and_left"
+        app:layout_constraintBottom_toBottomOf="@id/senderNameWrapper"
+        app:layout_constraintLeft_toRightOf="@id/senderInitialBarrier"
+        app:layout_constraintRight_toLeftOf="@id/repliedAllImageView"
+        app:layout_constraintTop_toTopOf="@id/senderNameWrapper"
+        app:tint="@color/icon_norm"
+        tools:src="@drawable/ic_proton_arrow_up_and_left" />
+
+    <ImageView
+        android:id="@+id/repliedAllImageView"
+        android:layout_width="@dimen/message_details_header_small_icon_size"
+        android:layout_height="@dimen/message_details_header_small_icon_size"
+        android:layout_marginEnd="@dimen/message_details_header_margin_normal"
+        app:srcCompat="@drawable/ic_proton_arrows_up_and_left"
+        app:layout_constraintBottom_toBottomOf="@id/senderNameWrapper"
+        app:layout_constraintLeft_toRightOf="@id/repliedImageView"
+        app:layout_constraintTop_toTopOf="@id/senderNameWrapper"
+        app:tint="@color/icon_norm"
+        tools:src="@drawable/ic_proton_arrows_up_and_left" />
+
+    <ImageView
+        android:id="@+id/forwardedImageView"
+        android:layout_width="@dimen/message_details_header_small_icon_size"
+        android:layout_height="@dimen/message_details_header_small_icon_size"
+        android:layout_marginEnd="@dimen/message_details_header_margin_normal"
+        app:srcCompat="@drawable/ic_proton_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@id/senderNameWrapper"
+        app:layout_constraintLeft_toRightOf="@id/repliedAllImageView"
+        app:layout_constraintTop_toTopOf="@id/senderNameWrapper"
+        app:tint="@color/icon_norm"
+        tools:src="@drawable/ic_proton_arrow_right" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/senderNameWrapper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/senderInitialView"
+        android:layout_marginEnd="@dimen/message_details_header_margin_small"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/forwardedImageView"
+        app:layout_constraintTop_toTopOf="@id/senderInitialView"
+        app:layout_constraintEnd_toStartOf="@id/collapsedMessageViews">
+
+        <TextView
+            android:id="@+id/senderNameTextView"
+            style="@style/Proton.Text.Default"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@tools:sample/full_names" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/authenticity_badge_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/message_details_header_small_icon_size"
+            android:layout_marginStart="@dimen/padding_xs"
+            android:background="@color/background_secondary"
+            android:clickable="false"
+            android:contentDescription="@string/is_proton"
+            android:text="@string/is_proton_official_badge"
+            android:textAppearance="@style/Proton.Text.Overline"
+            android:textColor="?attr/proton_text_accent"
+            android:visibility="gone"
+            app:chipCornerRadius="@dimen/size_corner_xxs"
+            app:chipMinTouchTargetSize="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/senderNameWrapper"
+            app:layout_constraintStart_toEndOf="@id/senderNameTextView"
+            app:layout_constraintTop_toTopOf="@id/senderNameWrapper"
+            app:rippleColor="@android:color/transparent"
+            app:textEndPadding="@dimen/padding_xs"
+            app:textStartPadding="@dimen/padding_xs" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ch.protonmail.android.details.presentation.view.CollapsedMessageViews
+        android:id="@+id/collapsedMessageViews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/message_details_header_margin_extra_small"
+        android:layout_marginEnd="@dimen/message_details_header_margin_small"
+        app:layout_constraintBottom_toBottomOf="@id/senderNameWrapper"
+        app:layout_constraintEnd_toStartOf="@id/messageDetailsIcons"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/senderNameWrapper"
+        app:layout_constraintTop_toTopOf="@id/senderNameWrapper" />
+
+    <ch.protonmail.android.details.presentation.view.MessageDetailsHeaderIcons
+        android:id="@+id/messageDetailsIcons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/message_details_header_margin_small"
+        android:layout_marginEnd="@dimen/message_details_header_margin_small"
+        app:layout_constraintBottom_toBottomOf="@id/senderNameWrapper"
+        app:layout_constraintEnd_toStartOf="@id/lockIconTextView"
+        app:layout_constraintTop_toTopOf="@id/senderNameWrapper" />
+
+    <TextView
+        android:id="@+id/lockIconTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/message_details_header_margin_normal"
+        android:layout_marginEnd="@dimen/message_details_header_margin_normal"
+        android:layout_marginTop="@dimen/message_details_header_margin_small"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/senderNameWrapper"
+        app:layout_constraintEnd_toStartOf="@id/locationImageView"
+        app:layout_constraintTop_toTopOf="@id/senderNameWrapper"
+        tools:text="@string/lock_default" />
+
+    <ImageView
+        android:id="@+id/locationImageView"
+        android:layout_width="@dimen/message_details_header_small_icon_size"
+        android:layout_height="@dimen/message_details_header_small_icon_size"
+        android:layout_marginEnd="@dimen/message_details_header_margin_normal"
+        app:layout_constraintBottom_toBottomOf="@id/senderNameWrapper"
+        app:layout_constraintEnd_toStartOf="@id/timeDateTextView"
+        app:layout_constraintTop_toTopOf="@id/senderNameWrapper"
+        app:tint="@color/icon_weak"
+        tools:src="@drawable/ic_proton_inbox" />
+
+    <TextView
+        android:id="@+id/timeDateTextView"
+        style="@style/Proton.Text.Caption.Weak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/senderNameWrapper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/senderNameWrapper"
+        tools:text="@tools:sample/date/ddmmyy" />
+
+    <TextView
+        android:id="@+id/senderEmailTextView"
+        style="@style/Proton.Text.DefaultSmall.Interaction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/message_details_header_margin_normal"
+        android:layout_marginEnd="@dimen/message_details_header_margin_normal"
+        app:layout_constraintLeft_toRightOf="@id/senderInitialBarrier"
+        app:layout_constraintRight_toLeftOf="@id/expandCollapseChevronImageView"
+        app:layout_constraintTop_toBottomOf="@id/senderNameWrapper"
+        tools:text="&lt;alice@pm.me&gt;" />
+
+    <ImageView
+        android:id="@+id/expandCollapseChevronImageView"
+        android:layout_width="@dimen/message_details_header_chevron_icon_size"
+        android:layout_height="@dimen/message_details_header_chevron_icon_size"
+        android:padding="@dimen/message_details_header_chevron_icon_padding"
+        app:srcCompat="@drawable/ic_proton_chevron_down"
+        android:visibility="gone"
+        android:contentDescription="@string/expand_message_details"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeDateTextView"
+        app:tint="@color/icon_weak"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/toCollapsedTextView"
+        style="@style/Proton.Text.DefaultSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/message_details_header_margin_small"
+        android:text="@string/to_prefix"
+        app:layout_constraintBottom_toBottomOf="@id/recipientsCollapsedTextView"
+        app:layout_constraintLeft_toRightOf="@id/senderInitialBarrier"
+        app:layout_constraintRight_toLeftOf="@id/recipientsCollapsedTextView"
+        app:layout_constraintTop_toTopOf="@id/recipientsCollapsedTextView" />
+
+    <TextView
+        android:id="@+id/recipientsCollapsedTextView"
+        style="@style/Proton.Text.DefaultSmall.Weak"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/message_details_header_margin_small"
+        android:layout_marginEnd="@dimen/message_details_header_margin_normal"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintLeft_toRightOf="@id/toCollapsedTextView"
+        app:layout_constraintRight_toLeftOf="@id/expandCollapseChevronImageView"
+        app:layout_constraintTop_toBottomOf="@+id/senderEmailTextView"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/toExpandedTextView"
+        style="@style/Proton.Text.DefaultSmall.Weak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to"
+        app:layout_constraintLeft_toLeftOf="@id/senderInitialView"
+        app:layout_constraintRight_toRightOf="@id/senderInitialView"
+        app:layout_constraintTop_toTopOf="@id/toRecipientsExpandedView" />
+
+    <ch.protonmail.android.views.messageDetails.MessageDetailsRecipientsContainerView
+        android:id="@+id/toRecipientsExpandedView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/message_details_header_margin_normal"
+        app:layout_constraintLeft_toRightOf="@id/senderInitialBarrier"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recipientsCollapsedTextView"
+        tools:layout_height="20dp" />
+
+    <TextView
+        android:id="@+id/ccExpandedTextView"
+        style="@style/Proton.Text.DefaultSmall.Weak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cc"
+        app:layout_constraintLeft_toLeftOf="@id/toExpandedTextView"
+        app:layout_constraintRight_toRightOf="@id/toExpandedTextView"
+        app:layout_constraintTop_toTopOf="@id/ccRecipientsExpandedView" />
+
+    <ch.protonmail.android.views.messageDetails.MessageDetailsRecipientsContainerView
+        android:id="@+id/ccRecipientsExpandedView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/message_details_header_margin_normal"
+        app:layout_constraintLeft_toRightOf="@id/senderInitialBarrier"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toRecipientsExpandedView"
+        tools:layout_height="20dp" />
+
+    <TextView
+        android:id="@+id/bccExpandedTextView"
+        style="@style/Proton.Text.DefaultSmall.Weak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bcc"
+        app:layout_constraintLeft_toLeftOf="@id/ccExpandedTextView"
+        app:layout_constraintRight_toRightOf="@id/ccExpandedTextView"
+        app:layout_constraintTop_toTopOf="@id/bccRecipientsExpandedView" />
+
+    <ch.protonmail.android.views.messageDetails.MessageDetailsRecipientsContainerView
+        android:id="@+id/bccRecipientsExpandedView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/message_details_header_margin_normal"
+        app:layout_constraintLeft_toRightOf="@id/senderInitialBarrier"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ccRecipientsExpandedView"
+        tools:layout_height="20dp" />
+
+    <ImageView
+        android:id="@+id/labelsImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_proton_tag"
+        app:layout_constraintLeft_toLeftOf="@id/senderInitialView"
+        app:layout_constraintRight_toRightOf="@id/senderInitialView"
+        app:layout_constraintTop_toTopOf="@+id/labelsExpandedGroupView"
+        app:tint="@color/icon_weak" />
+
+    <ch.protonmail.android.ui.view.SingleLineLabelChipGroupView
+        android:id="@+id/labelsCollapsedGroupView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/message_details_header_margin_normal"
+        app:layout_constraintEnd_toStartOf="@id/expandCollapseChevronImageView"
+        app:layout_constraintStart_toEndOf="@id/senderInitialBarrier"
+        app:layout_constraintTop_toBottomOf="@id/recipientsCollapsedTextView" />
+
+    <ch.protonmail.android.ui.view.MultiLineLabelChipGroupView
+        android:id="@+id/labelsExpandedGroupView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/message_details_header_margin_big"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/senderInitialBarrier"
+        app:layout_constraintTop_toBottomOf="@id/bccRecipientsExpandedView"
+        tools:layout_height="20dp" />
+
+    <ImageView
+        android:id="@+id/calendarImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_proton_calendar_today"
+        app:layout_constraintBottom_toBottomOf="@id/timeDateExtendedTextView"
+        app:layout_constraintLeft_toLeftOf="@id/senderInitialView"
+        app:layout_constraintRight_toRightOf="@id/senderInitialView"
+        app:layout_constraintTop_toTopOf="@+id/timeDateExtendedTextView"
+        app:tint="@color/icon_weak" />
+
+    <TextView
+        android:id="@+id/timeDateExtendedTextView"
+        style="@style/Proton.Text.DefaultSmall.Weak"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/message_details_header_margin_big"
+        app:layout_constraintLeft_toRightOf="@id/senderInitialBarrier"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelsExpandedGroupView"
+        tools:text="2021-01-28 at 10:04 AM" />
+
+    <ImageView
+        android:id="@+id/locationExtendedImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/locationTextView"
+        app:layout_constraintLeft_toLeftOf="@id/senderInitialView"
+        app:layout_constraintRight_toRightOf="@id/senderInitialView"
+        app:layout_constraintTop_toTopOf="@+id/locationTextView"
+        app:tint="@color/icon_weak"
+        tools:src="@drawable/ic_proton_inbox" />
+
+    <TextView
+        android:id="@+id/locationTextView"
+        style="@style/Proton.Text.DefaultSmall.Weak"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/message_details_header_margin_big"
+        app:layout_constraintLeft_toRightOf="@id/senderInitialBarrier"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeDateExtendedTextView"
+        tools:text="Inbox" />
+
+    <ImageView
+        android:id="@+id/storageImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_proton_storage"
+        app:layout_constraintBottom_toBottomOf="@id/storageTextView"
+        app:layout_constraintLeft_toLeftOf="@id/senderInitialView"
+        app:layout_constraintRight_toRightOf="@id/senderInitialView"
+        app:layout_constraintTop_toTopOf="@+id/storageTextView"
+        app:tint="@color/icon_weak" />
+
+    <TextView
+        android:id="@+id/storageTextView"
+        style="@style/Proton.Text.DefaultSmall.Weak"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/message_details_header_margin_big"
+        app:layout_constraintLeft_toRightOf="@id/senderInitialBarrier"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/locationTextView"
+        tools:text="6.25 KB" />
+
+    <!-- TODO: Should be replaced with a view with the v4 icons -->
+    <TextView
+        android:id="@+id/lockIconExtendedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="22sp"
+        app:layout_constraintLeft_toLeftOf="@id/senderInitialView"
+        app:layout_constraintRight_toRightOf="@id/senderInitialView"
+        app:layout_constraintTop_toTopOf="@+id/encryptionInfoTextView"
+        tools:text="@string/lock_default" />
+
+    <TextView
+        android:id="@+id/encryptionInfoTextView"
+        style="@style/Proton.Text.DefaultSmall.Weak"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/message_details_header_margin_big"
+        app:layout_constraintLeft_toRightOf="@id/senderInitialBarrier"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/storageTextView"
+        tools:text="End-to-end encrypted and signed message" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/collapsedHeaderGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="lockIconTextView,
+        toCollapsedTextView, recipientsCollapsedTextView"
+        tools:visibility="gone" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/expandedHeaderGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="senderEmailTextView, lockIconExtendedTextView,
+        encryptionInfoTextView, locationExtendedImageView, locationTextView,
+        calendarImageView, timeDateExtendedTextView, storageImageView,
+        storageTextView"
+        tools:visibility="visible" />
+
+</merge>

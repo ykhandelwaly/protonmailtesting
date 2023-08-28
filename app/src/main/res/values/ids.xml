@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+<resources>
+
+    <item name="more_items_ll_more_text_view" type="id" />
+    <item name="multi_line_label_recycler_view" type="id" />
+    <item name="side_drawer_recycler_view" type="id" />
+    <item name="single_line_label_more_text_view" type="id" />
+
+    <item name="item_message_body_web_view_id" type="id" />
+    <item name="item_message_body_progress_view_id" type="id" />
+    <item name="item_message_body_actions_layout_id" type="id" />
+    <item name="item_message_body_reply_actions_layout_id" type="id" />
+
+    <item name="monday" type="id" />
+    <item name="tuesday" type="id" />
+    <item name="wednesday" type="id" />
+    <item name="thursday" type="id" />
+    <item name="friday" type="id" />
+    <item name="saturday" type="id" />
+    <item name="sunday" type="id" />
+
+    <item name="menu_recycler_view" type="id" />
+</resources>

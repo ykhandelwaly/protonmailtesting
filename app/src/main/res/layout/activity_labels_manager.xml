@@ -1,0 +1,174 @@
+<!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/labels_dialog_title"
+                style="@style/Proton.Text.DefaultSmall.Interaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_l"
+                android:layout_marginTop="@dimen/padding_xl"
+                android:layout_marginEnd="@dimen/padding_l"
+                android:layout_marginBottom="@dimen/padding_m"
+                android:text="@string/label_add_new" />
+
+            <RelativeLayout
+                android:id="@+id/add_label_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_l"
+                android:layout_marginEnd="@dimen/padding_l"
+                android:layout_marginBottom="@dimen/padding_l">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/label_name_text_view"
+                    style="@style/ProtonInput.Mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/label_name"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textCursorDrawable="@null" />
+            </RelativeLayout>
+
+            <View style="@style/ViewSeparatorHorizontal"/>
+
+            <LinearLayout
+                android:id="@+id/edit_label_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/labels_manager_parent_folder_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_l"
+                    android:textAppearance="@style/Proton.Text.Default"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:text="@string/labels_manager_select_parent_folder"/>
+
+                <View style="@style/ViewSeparatorHorizontal"/>
+
+                <GridView
+                    android:id="@+id/colors_grid_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/padding_l"
+                    android:layout_marginHorizontal="@dimen/padding_xl"
+                    android:divider="@null"
+                    android:dividerHeight="0dp"
+                    android:listSelector="@android:color/transparent"
+                    android:nestedScrollingEnabled="false"
+                    android:numColumns="5"
+                    android:scrollbars="none"
+                    android:horizontalSpacing="@dimen/padding_xl"
+                    android:verticalSpacing="@dimen/padding_xl" />
+
+                <Button
+                    android:id="@+id/save_button"
+                    style="@style/ProtonButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/padding_xl"
+                    android:paddingStart="@dimen/padding_xxl"
+                    android:paddingEnd="@dimen/padding_xxl"
+                    android:text="@string/update_label" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/labels_list_view_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_l"
+                android:layout_marginEnd="@dimen/padding_l"
+                android:paddingBottom="@dimen/padding_xl"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/available_labels_title"
+                    style="@style/Proton.Text.DefaultSmall.Interaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_xl"
+                    android:layout_marginBottom="@dimen/padding_m"
+                    android:text="@string/available_labels" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/labels_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/available_labels_title"
+                    android:divider="@color/separator_norm"
+                    android:dividerHeight="1px"
+                    android:paddingTop="0dp" />
+
+                <TextView
+                    android:id="@+id/no_labels"
+                    style="@style/Proton.Text.Default.Weak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/available_labels_title"
+                    android:layout_marginStart="@dimen/fields_default_space_large"
+                    android:text="@string/no_labels"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/delete_labels"
+                    style="@style/ProtonButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/labels_recycler_view"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/padding_l"
+                    android:enabled="false"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/padding_xl"
+                    android:paddingEnd="@dimen/padding_xl"
+                    android:text="@string/delete_selected" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

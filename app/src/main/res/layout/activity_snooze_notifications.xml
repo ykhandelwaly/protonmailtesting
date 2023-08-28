@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:paddingTop="@dimen/padding_xl">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/title"
+                    style="@style/Proton.Text.Default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/padding_l"
+                    android:text="@string/notifications_snooze_scheduled" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/notificationSnoozeScheduledSwitch"
+                    style="@style/ProtonSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/padding_l"
+                    android:gravity="end|center_vertical" />
+
+            </LinearLayout>
+
+            <View style="@style/ViewSeparatorHorizontal"/>
+
+            <LinearLayout
+                android:id="@+id/notifications_snooze_status_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    style="@style/Proton.Text.DefaultSmall.Interaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/padding_l"
+                    android:paddingTop="@dimen/padding_xl"
+                    android:paddingEnd="@dimen/padding_l"
+                    android:paddingBottom="@dimen/padding_m"
+                    android:text="@string/notifications_snooze_current_status" />
+
+                <TextView
+                    android:id="@+id/notificationsSnoozeCurrentStatus"
+                    style="@style/Proton.Text.Default.Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_l"
+                    android:text="@string/notifications_snoozed" />
+            </LinearLayout>
+
+            <View style="@style/ViewSeparatorHorizontal"/>
+
+            <LinearLayout
+                android:id="@+id/notificationsSnoozeScheduledContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Proton.Text.DefaultSmall.Interaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/padding_l"
+                    android:paddingTop="@dimen/padding_xl"
+                    android:paddingEnd="@dimen/padding_l"
+                    android:paddingBottom="@dimen/padding_m"
+                    android:text="@string/notifications_snooze_scheduled_settings" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/snooze_start_time_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:padding="@dimen/padding_l"
+                        android:paddingBottom="@dimen/padding_m">
+
+                        <TextView
+                            android:id="@+id/snoozeStartTime"
+                            style="@style/Proton.Text.Default.Hint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="22:00" />
+
+                        <TextView
+                            style="@style/Proton.Text.Default"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toStartOf="@id/snoozeStartTime"
+                            android:text="@string/snooze_start_time" />
+
+                    </RelativeLayout>
+
+                    <View style="@style/ViewSeparatorHorizontal"/>
+
+                    <RelativeLayout
+                        android:id="@+id/snooze_end_time_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:padding="@dimen/padding_l">
+
+                        <TextView
+                            android:id="@+id/snoozeEndTime"
+                            style="@style/Proton.Text.Default.Hint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="08:00" />
+
+                        <TextView
+                            style="@style/Proton.Text.Default"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toStartOf="@id/snoozeEndTime"
+                            android:text="@string/snooze_end_time" />
+
+                    </RelativeLayout>
+
+                    <View style="@style/ViewSeparatorHorizontal"/>
+
+                    <LinearLayout
+                        android:id="@+id/snooze_repeat_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/padding_l">
+
+                            <TextView
+                                style="@style/Proton.Text.Default"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/snooze_repeat" />
+
+                            <TextView
+                                android:id="@+id/repeatingDaysLabel"
+                                style="@style/Proton.Text.Default.Hint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/repeating_days"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/padding_l"
+                            android:visibility="visible">
+
+                            <ch.protonmail.android.settings.presentation.SnoozeRepeatDayView
+                                android:id="@+id/monday"
+                                style="@style/Proton.Text.Default"
+                                android:layout_width="@dimen/settings_snooze_day_size"
+                                android:layout_height="@dimen/settings_snooze_day_size"
+                                android:gravity="center"
+                                android:textColor="@color/text_norm" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <ch.protonmail.android.settings.presentation.SnoozeRepeatDayView
+                                android:id="@+id/tuesday"
+                                style="@style/Proton.Text.Default"
+                                android:layout_width="@dimen/settings_snooze_day_size"
+                                android:layout_height="@dimen/settings_snooze_day_size"
+                                android:gravity="center"
+                                android:textColor="@color/text_norm" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <ch.protonmail.android.settings.presentation.SnoozeRepeatDayView
+                                android:id="@+id/wednesday"
+                                style="@style/Proton.Text.Default"
+                                android:layout_width="@dimen/settings_snooze_day_size"
+                                android:layout_height="@dimen/settings_snooze_day_size"
+                                android:gravity="center"
+                                android:textColor="@color/text_norm" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <ch.protonmail.android.settings.presentation.SnoozeRepeatDayView
+                                android:id="@+id/thursday"
+                                style="@style/Proton.Text.Default"
+                                android:layout_width="@dimen/settings_snooze_day_size"
+                                android:layout_height="@dimen/settings_snooze_day_size"
+                                android:gravity="center"
+                                android:textColor="@color/text_norm" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <ch.protonmail.android.settings.presentation.SnoozeRepeatDayView
+                                android:id="@+id/friday"
+                                style="@style/Proton.Text.Default"
+                                android:layout_width="@dimen/settings_snooze_day_size"
+                                android:layout_height="@dimen/settings_snooze_day_size"
+                                android:gravity="center"
+                                android:textColor="@color/text_norm" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <ch.protonmail.android.settings.presentation.SnoozeRepeatDayView
+                                android:id="@+id/saturday"
+                                style="@style/Proton.Text.Default"
+                                android:layout_width="@dimen/settings_snooze_day_size"
+                                android:layout_height="@dimen/settings_snooze_day_size"
+                                android:gravity="center"
+                                android:textColor="@color/text_norm" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <ch.protonmail.android.settings.presentation.SnoozeRepeatDayView
+                                android:id="@+id/sunday"
+                                style="@style/Proton.Text.Default"
+                                android:layout_width="@dimen/settings_snooze_day_size"
+                                android:layout_height="@dimen/settings_snooze_day_size"
+                                android:gravity="center"
+                                android:textColor="@color/text_norm" />
+                        </LinearLayout>
+
+                        <View style="@style/ViewSeparatorHorizontal"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleDefaultAddress"
+                style="@style/Proton.Text.DefaultSmall.Interaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_l"
+                android:paddingTop="@dimen/padding_xl"
+                android:paddingEnd="@dimen/padding_l"
+                android:paddingBottom="@dimen/padding_m"
+                android:text="@string/account" />
+
+            <TextView
+                android:id="@+id/defaultAddress"
+                style="@style/Proton.Text.Default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:padding="@dimen/padding_l"
+                app:drawableEndCompat="@drawable/ic_proton_chevron_down" />
+
+            <View style="@style/ViewSeparatorHorizontal"/>
+
+            <LinearLayout
+                android:id="@+id/addressChooser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/titleAvailableAddresses"
+                    style="@style/Proton.Text.DefaultSmall.Interaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/padding_l"
+                    android:paddingTop="@dimen/padding_xl"
+                    android:paddingEnd="@dimen/padding_l"
+                    android:paddingBottom="@dimen/padding_m"
+                    android:text="@string/available_addresses" />
+
+                <TextView
+                    android:id="@+id/noAvailableAddresses"
+                    style="@style/Proton.Text.Default.Weak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_l"
+                    android:text="@string/no_available_addresses"
+                    android:visibility="gone" />
+
+                <RadioGroup
+                    android:id="@+id/availableAddresses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View style="@style/ViewSeparatorHorizontal"/>
+
+                <TextView
+                    android:id="@+id/titleInactiveAddresses"
+                    style="@style/Proton.Text.DefaultSmall.Interaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/padding_l"
+                    android:paddingTop="@dimen/padding_xl"
+                    android:paddingEnd="@dimen/padding_l"
+                    android:paddingBottom="@dimen/padding_m"
+                    android:text="@string/inactive_addresses" />
+
+                <TextView
+                    android:id="@+id/noInactiveAddresses"
+                    style="@style/Proton.Text.Default.Weak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_l"
+                    android:text="@string/no_inactive_addresses"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/inactiveAddresses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <View style="@style/ViewSeparatorHorizontal"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

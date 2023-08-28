@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/address_detailed_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Proton.Text.DefaultSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/padding_m"
+            android:layout_marginVertical="@dimen/padding_s"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="@string/address_street" />
+
+        <me.proton.core.presentation.ui.view.ProtonInput
+            android:id="@+id/address_street"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_m"
+            android:singleLine="true"
+            android:textColor="@color/text_norm"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Proton.Text.DefaultSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/padding_m"
+            android:layout_marginVertical="@dimen/padding_s"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="@string/address_extended_street" />
+
+        <me.proton.core.presentation.ui.view.ProtonInput
+            android:id="@+id/address_street_extended"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_m"
+            android:singleLine="true"
+            android:textColor="@color/text_norm"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Proton.Text.DefaultSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/padding_m"
+            android:layout_marginVertical="@dimen/padding_s"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="@string/address_city" />
+
+        <me.proton.core.presentation.ui.view.ProtonInput
+            android:id="@+id/address_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_m"
+            android:singleLine="true"
+            android:textColor="@color/text_norm"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fields_default_space_small"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/fields_default_space_small">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Proton.Text.DefaultSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/padding_m"
+                android:layout_marginVertical="@dimen/padding_s"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="@string/address_region" />
+
+            <me.proton.core.presentation.ui.view.ProtonInput
+                android:id="@+id/address_region"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_m"
+                android:singleLine="true"
+                android:textColor="@color/text_norm"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Proton.Text.DefaultSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/padding_m"
+                android:layout_marginVertical="@dimen/padding_s"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="@string/address_postcode" />
+
+            <me.proton.core.presentation.ui.view.ProtonInput
+                android:id="@+id/address_postcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_m"
+                android:layout_marginEnd="@dimen/padding_m"
+                android:singleLine="true"
+                android:textColor="@color/text_norm"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Proton.Text.DefaultSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/padding_m"
+                android:layout_marginVertical="@dimen/padding_s"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="@string/address_po_box" />
+
+            <me.proton.core.presentation.ui.view.ProtonInput
+                android:id="@+id/address_po_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_m"
+                android:singleLine="true"
+                android:textColor="@color/text_norm"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Proton.Text.DefaultSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/padding_m"
+                android:layout_marginVertical="@dimen/padding_s"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="@string/address_country" />
+
+            <me.proton.core.presentation.ui.view.ProtonInput
+                android:id="@+id/address_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_m"
+                android:singleLine="true"
+                android:textColor="@color/text_norm"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

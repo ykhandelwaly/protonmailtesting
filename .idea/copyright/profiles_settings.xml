@@ -1,0 +1,11 @@
+<component name="CopyrightManager">
+  <settings default="Proton Mail">
+    <module2copyright>
+      <element module="Production" copyright="Proton Mail" />
+      <element module="Tests" copyright="Proton Mail" />
+      <element module="Project Source Files" copyright="Proton Mail" />
+      <element module="Gradle files" copyright="Proton Mail" />
+      <element module="All" copyright="Proton Mail" />
+    </module2copyright>
+  </settings>
+</component>

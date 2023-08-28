@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_norm">
+
+    <TextView
+        android:id="@+id/dialog_expiration_unsupported_title_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/padding_l"
+        android:text="@string/expiration_error_title"
+        android:textAppearance="@style/ProtonTextView.Body1"
+        android:textColor="@color/text_norm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <me.proton.core.presentation.ui.view.ProtonButton
+        android:id="@+id/dialog_expiration_unsupported_send_anyway_button"
+        style="@style/ProtonButton.Borderless.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_m"
+        android:text="@string/send_anyway"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <me.proton.core.presentation.ui.view.ProtonButton
+        android:id="@+id/dialog_expiration_unsupported_cancel_button"
+        style="@style/ProtonButton.Borderless.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_m"
+        android:text="@string/cancel"
+        android:textColor="?attr/colorError"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/dialog_expiration_unsupported_send_anyway_button" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/dialog_expiration_unsupported_send_anyway_button"
+        app:layout_constraintTop_toBottomOf="@id/dialog_expiration_unsupported_title_text_view"
+        app:layout_constraintVertical_bias="0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_l"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/recipients_missing_password_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_l"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Proton.Text.Default.Weak"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/expiration_error_add_msg_password" />
+
+                <ImageButton
+                    android:id="@+id/recipients_missing_password_switch"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    app:srcCompat="@drawable/ic_proton_chevron_down"
+                    app:tint="@color/icon_weak" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/recipients_missing_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" />
+
+            <include layout="@layout/horizontal_divider" />
+
+            <LinearLayout
+                android:id="@+id/recipients_disable_pgp_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Proton.Text.Default.Weak"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/expiration_error_disable_pgp_sending" />
+
+                <ImageButton
+                    android:id="@+id/recipients_disable_pgp_switch"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    app:srcCompat="@drawable/ic_proton_chevron_down"
+                    app:tint="@color/icon_weak" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/recipients_disable_pgp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin_large"
+                android:visibility="gone" />
+
+            <include layout="@layout/horizontal_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin_large"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    style="@style/Proton.Text.Default.Weak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/expiration_error_proceed" />
+
+                <TextView
+                    android:id="@+id/learn_more_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_marginBottom="@dimen/padding_l"
+                    android:linksClickable="true"
+                    android:text="@string/expiration_error_learn_more" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,85 @@
+<!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/attachment_list_spacing"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/attachment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/remove">
+
+        <ImageView
+            android:layout_width="@dimen/attachment_list_spacing"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:scaleType="center"
+            app:srcCompat="@drawable/ic_proton_paper_clip" />
+
+        <TextView
+            style="@style/Proton.Text.DefaultSmall"
+            android:id="@+id/embedded_image_attachment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:text="@string/inline_prefix" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/attachment_name"
+                style="@style/Proton.Text.DefaultSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_s"
+                android:ellipsize="middle"
+                android:maxLines="1"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/attachment_size"
+                style="@style/Proton.Text.DefaultSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@id/remove"
+        android:layout_width="@dimen/attachment_list_spacing"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparent"
+        android:contentDescription="@null"
+        app:srcCompat="@drawable/ic_proton_cross_circle"
+        app:tint="@color/notification_error" />
+
+</RelativeLayout>

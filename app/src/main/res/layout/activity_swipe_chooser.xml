@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <RadioGroup
+        android:id="@+id/swipeRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_m"
+        android:layout_marginHorizontal="@dimen/padding_l">
+
+<!--        <me.proton.core.presentation.ui.view.ProtonRadioButton-->
+<!--            android:id="@+id/none"-->
+<!--            style="@style/ProtonRadioButton.Mail"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="start"-->
+<!--            android:layout_marginHorizontal="@dimen/settings_radio_button_margin"-->
+<!--            android:drawableStart="@drawable/ic_clear_circle"-->
+<!--            android:drawablePadding="@dimen/padding_m"-->
+<!--            -->
+<!--            android:paddingTop="@dimen/padding_l"-->
+<!--            android:visibility="gone"-->
+<!--            android:paddingBottom="@dimen/padding_l"-->
+<!--            android:text="@string/none" />-->
+
+        <me.proton.core.presentation.ui.view.ProtonRadioButton
+            android:id="@+id/read_unread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="@dimen/settings_radio_button_margin"
+            android:drawableStart="@drawable/ic_proton_envelope_dot"
+            android:drawablePadding="@dimen/padding_m"
+            
+            android:text="@string/mark_as_read" />
+
+        <me.proton.core.presentation.ui.view.ProtonRadioButton
+            android:id="@+id/star_unstar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="@dimen/settings_radio_button_margin"
+            android:drawableStart="@drawable/ic_proton_star"
+            android:drawablePadding="@dimen/padding_m"
+            
+            android:text="@string/star_unstar" />
+
+        <me.proton.core.presentation.ui.view.ProtonRadioButton
+            android:id="@+id/trash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="@dimen/settings_radio_button_margin"
+            android:drawableStart="@drawable/ic_proton_trash"
+            android:drawablePadding="@dimen/padding_m"
+            
+            android:text="@string/trash" />
+
+<!--        <me.proton.core.presentation.ui.view.ProtonRadioButton-->
+<!--            android:id="@+id/label_as"-->
+<!--            style="@style/ProtonRadioButton.Mail"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="start"-->
+<!--            android:layout_marginHorizontal="@dimen/settings_radio_button_margin"-->
+<!--            android:drawableStart="@drawable/ic_label"-->
+<!--            android:drawablePadding="@dimen/padding_m"-->
+<!--            -->
+<!--            android:paddingTop="@dimen/padding_l"-->
+<!--            android:visibility="gone"-->
+<!--            android:paddingBottom="@dimen/padding_l"-->
+<!--            android:text="@string/label_as" />-->
+
+<!--        <me.proton.core.presentation.ui.view.ProtonRadioButton-->
+<!--            android:id="@+id/move_to"-->
+<!--            style="@style/ProtonRadioButton.Mail"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="start"-->
+<!--            android:layout_marginHorizontal="@dimen/settings_radio_button_margin"-->
+<!--            android:drawableStart="@drawable/ic_folder_move"-->
+<!--            android:drawablePadding="@dimen/padding_m"-->
+<!--            android:visibility="gone"-->
+<!--            -->
+<!--            android:paddingTop="@dimen/padding_l"-->
+<!--            android:paddingBottom="@dimen/padding_l"-->
+<!--            android:text="@string/move_to" />-->
+
+        <me.proton.core.presentation.ui.view.ProtonRadioButton
+            android:id="@+id/move_to_archive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="@dimen/settings_radio_button_margin"
+            android:drawableStart="@drawable/ic_proton_archive_box"
+            android:drawablePadding="@dimen/padding_m"
+            
+            android:text="@string/move_to_archive" />
+
+        <me.proton.core.presentation.ui.view.ProtonRadioButton
+            android:id="@+id/move_to_spam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="@dimen/settings_radio_button_margin"
+            android:drawableStart="@drawable/ic_proton_fire"
+            android:drawablePadding="@dimen/padding_m"
+            
+            android:text="@string/move_to_spam" />
+    </RadioGroup>
+
+</LinearLayout>

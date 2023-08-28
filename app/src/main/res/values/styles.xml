@@ -1,0 +1,266 @@
+<!--
+  ~ Copyright (c) 2022 Proton AG
+  ~
+  ~ This file is part of Proton Mail.
+  ~
+  ~ Proton Mail is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Proton Mail is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+  -->
+
+<resources>
+
+    <style name="ProtonMailActionMode" parent="Widget.AppCompat.ActionMode">
+        <item name="height">?attr/actionBarSize</item>
+        <item name="background">@color/background_norm</item>
+        <item name="titleTextStyle">@style/Proton.Text.Headline.Small</item>
+    </style>
+
+    <style name="Proton.Text.DefaultSmall.Interaction">
+        <item name="android:textColor">?attr/proton_text_accent</item>
+    </style>
+
+    <style name="Proton.Text.Caption.Strong.Inverted">
+        <item name="android:textColor">@color/text_inverted</item>
+    </style>
+
+    <style name="ProtonInput" />
+
+    <style name="ProtonInput.Plain">
+        <item name="android:background">@null</item>
+        <item name="android:inputType">text|textNoSuggestions|textMultiLine</item>
+    </style>
+
+    <style name="ProtonInput.Mail" parent="ProtonInput.TextInputLayout.Border">
+        <item name="android:textAppearance">@style/Proton.Text.Default</item>
+        <item name="android:paddingStart">@dimen/padding_m</item>
+        <item name="android:paddingEnd">@dimen/padding_m</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:background">@drawable/field</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:textColor">@color/text_norm_selector</item>
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:gravity">top|left</item>
+    </style>
+
+    <style name="ProtonBadge">
+        <item name="android:textAppearance">@style/Proton.Text.Default.Inverted</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:minWidth">@dimen/size_badge</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:background">@drawable/shape_stretchable_circle</item>
+        <item name="backgroundTint">?brand_norm</item>
+    </style>
+
+
+    <style name="AlertDialog" parent="Proton.ThemeOverlay.AlertDialog">
+        <item name="android:background">@color/background_norm</item>
+    </style>
+
+    <style name="OverFlowIcon" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_proton_three_dots_vertical</item>
+    </style>
+
+
+    <!-- region Mailbox -->
+    <style name="UnreadMessagesStatusChip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textAppearance">@style/Proton.Text.Caption.Strong</item>
+        <item name="android:textColor">@drawable/selector_unread_messages_status_text_color</item>
+        <item name="chipBackgroundColor">@drawable/selector_unread_messages_status_background</item>
+        <item name="chipCornerRadius">25dp</item>
+        <item name="closeIcon">@drawable/ic_proton_cross</item>
+        <item name="closeIconTint">@color/icon_inverted</item>
+    </style>
+    <!-- endregion -->
+
+    <!-- region Composer -->
+    <style name="MessageRecipientChip">
+        <item name="android:background">@drawable/bg_recipient_chip</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:textAppearance">@style/Proton.Text.Caption</item>
+    </style>
+    <!-- endregion -->
+
+    <style name="ViewSeparatorHorizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_divider</item>
+        <item name="android:background">@color/separator_norm</item>
+    </style>
+
+    <!-- region Action Sheet -->
+    <style name="ListStandardItem">
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:padding">@dimen/padding_l</item>
+        <item name="android:drawablePadding">@dimen/padding_l</item>
+        <item name="android:textAppearance">@style/Proton.Text.Default</item>
+    </style>
+
+    <style name="ListSectionTitleItem">
+        <item name="android:maxLines">1</item>
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:paddingStart">@dimen/padding_l</item>
+        <item name="android:paddingTop">@dimen/padding_xl</item>
+        <item name="android:paddingBottom">@dimen/padding_m</item>
+        <item name="android:paddingEnd">@dimen/padding_l</item>
+        <item name="android:textColor">@color/text_weak</item>
+        <item name="android:textAppearance">@style/Proton.Text.DefaultSmall</item>
+    </style>
+
+    <style name="ActionButtons">
+        <item name="android:layout_margin">@dimen/margin_m</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/shape_background_action_sheet_buttons</item>
+        <item name="android:drawablePadding">@dimen/padding_s</item>
+        <item name="android:focusable">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/padding_m</item>
+        <item name="android:paddingBottom">@dimen/padding_m</item>
+        <item name="android:paddingStart">@dimen/padding_l</item>
+        <item name="android:paddingEnd">@dimen/padding_l</item>
+        <item name="android:textColor">?attr/proton_text_accent</item>
+        <item name="android:textAppearance">@style/Proton.Text.Default</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+        <item name="drawableTint">?attr/proton_text_accent</item>
+    </style>
+
+    <style name="ProtonMail.BottomSheetDialogTheme" parent="@style/ProtonBottomSheetDialog" />
+    <!-- endregion -->
+
+    <!-- region Snackbar -->
+    <style name="Widget.App.Snackbar" parent="Widget.MaterialComponents.Snackbar">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Snackbar</item>
+        <item name="actionTextColorAlpha">1</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Snackbar" parent="">
+        <item name="colorSurface">?attr/proton_notification_norm</item>
+        <item name="colorOnSurface">?attr/proton_notification_norm</item>
+    </style>
+
+    <style name="Widget.App.SnackbarButton" parent="Widget.MaterialComponents.Button.TextButton.Snackbar">
+        <item name="android:textColor">@color/background_norm</item>
+    </style>
+    <!-- endregion -->
+
+    <style name="ProtonInput.PIN">
+        <item name="android:textAppearance">@style/Proton.Text.Default</item>
+        <item name="android:letterSpacing">0.4</item>
+        <item name="android:textSize">@dimen/settings_pin_font_size</item>
+        <item name="android:textColor">?attr/brand_norm</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="ReplyButtonTextStyle">
+        <item name="android:textAppearance">@style/Proton.Text.DefaultSmall</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:breakStrategy">balanced</item>
+    </style>
+
+    <style name="ReplyButtonStyle">
+        <item name="android:background">@drawable/ripple_reply_actions</item>
+        <item name="android:elevation">@dimen/elevation_s</item>
+    </style>
+    <!-- endregion -->
+
+    <!-- region V3 -->
+
+    <style name="AppTheme" parent="ProtonTheme" />
+
+    <style name="MessageRecipientView">
+        <item name="android:background">@null</item>
+        <item name="android:inputType">text|textNoSuggestions|textMultiLine</item>
+        <item name="android:textColor">@color/text_norm</item>
+        <item name="android:textAppearance">@style/Proton.Text.DefaultSmall</item>
+        <item name="android:lineSpacingExtra">@dimen/padding_m</item>
+    </style>
+
+    <style name="SettingsItemPadding">
+        <item name="android:background">@drawable/ripple_background_norm</item>
+        <item name="android:clickable">true</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/padding_m</item>
+        <item name="android:layout_marginLeft">@dimen/margin_m</item>
+        <item name="android:layout_marginRight">@dimen/margin_m</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/zoom_in</item>
+        <item name="android:windowExitAnimation">@null</item>
+    </style>
+
+    <style name="AppTheme.Dialog.Labels" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/background_norm</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <style name="PopupTheme" parent="Base.Theme.AppCompat.Light.Dialog.FixedSize">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="colorAccent">@android:color/transparent</item>
+    </style>
+
+    <style name="CustomKeyboardButton">
+        <item name="android:textAppearance">@style/Proton.Text.Default</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/settings_pin_key_button_font</item>
+        <item name="android:background">@drawable/keyboard_button_background</item>
+        <item name="android:layout_width">@dimen/settings_pin_key_button_size</item>
+        <item name="android:layout_height">@dimen/settings_pin_key_button_size</item>
+        <item name="android:layout_marginStart">@dimen/settings_pin_key_button_margin</item>
+        <item name="android:layout_marginEnd">@dimen/settings_pin_key_button_margin</item>
+        <item name="android:layout_marginBottom">@dimen/padding_m</item>
+        <item name="android:layout_marginTop">@dimen/padding_m</item>
+    </style>
+
+    <style name="CustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorHeight">3dp</item>
+        <item name="tabBackground">?attr/selectableItemBackground</item>
+        <item name="tabTextColor">?proton_text_weak</item>
+        <item name="tabSelectedTextColor">?proton_text_norm</item>
+    </style>
+
+    <style name="CustomSearchView" parent="ProtonInput">
+        <item name="android:textColor">@color/text_norm</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:drawableStart">@drawable/ic_proton_magnifier</item>
+        <item name="android:drawableLeft">@drawable/ic_proton_magnifier</item>
+        <item name="android:drawablePadding">@dimen/fields_default_space_small</item>
+    </style>
+
+    <!-- endregion -->
+
+</resources>
